@@ -1,6 +1,6 @@
 spring.datasource.url=jdbc:postgresql://localhost:5432/rincongourmet_db
 spring.datasource.username=postgres
-spring.datasource.password=admin123
+spring.datasource.password=TU_PASSWORD_AQUI
 
 spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
