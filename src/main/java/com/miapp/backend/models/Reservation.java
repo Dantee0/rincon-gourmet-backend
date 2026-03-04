@@ -11,11 +11,10 @@ public class Reservation {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private LocalDateTime reservationDate; // Fecha y hora
-    private Integer numberOfPeople; // Cantidad de personas
-    private String status; // Ej: "CONFIRMADA", "CANCELADA"
+    private LocalDateTime reservationDate;
+    private Integer numberOfPeople;
+    private String status;
 
-    // ¡Acá está la magia de la relación!
     @ManyToOne
     @JoinColumn(name = "customer_id")
     private Customer customer;
@@ -30,7 +29,6 @@ public class Reservation {
         this.customer = customer;
     }
 
-    // Getters y Setters
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
 

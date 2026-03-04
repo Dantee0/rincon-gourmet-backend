@@ -11,15 +11,13 @@ public class FoodOrder {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String status; // Ej: "EN PREPARACION", "ENTREGADO"
-    private Double totalAmount; // El precio total del pedido
+    private String status;
+    private Double totalAmount;
 
-    // Relación con el Cliente (Quién lo pidió)
     @ManyToOne
     @JoinColumn(name = "customer_id")
     private Customer customer;
 
-    // Relación con los Platos (Qué pidió)
     @ManyToMany
     @JoinTable(
         name = "order_dishes",
@@ -38,7 +36,6 @@ public class FoodOrder {
         this.dishes = dishes;
     }
 
-    // Getters y Setters
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
 

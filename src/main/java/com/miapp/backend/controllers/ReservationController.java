@@ -27,7 +27,6 @@ public class ReservationController {
         return reservationService.getAllReservations();
     }
 
-    // Endpoint exclusivo para que el Administrador confirme la reserva
     @PutMapping("/{id}/confirmar")
     public org.springframework.http.ResponseEntity<?> confirmarReserva(@PathVariable Long id) {
         java.util.Optional<Reservation> res = reservationRepository.findById(id);
@@ -42,7 +41,6 @@ public class ReservationController {
         }
     }
 
-    // Endpoint exclusivo para que el Administrador borre una reserva
     @DeleteMapping("/{id}")
     public org.springframework.http.ResponseEntity<?> deleteReservation(@PathVariable Long id) {
         try {

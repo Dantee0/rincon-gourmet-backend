@@ -27,7 +27,6 @@ public class FoodOrderController {
         return foodOrderService.getAllOrders();
     }
 
-    // Endpoint exclusivo para que el Administrador entregue el pedido
     @PutMapping("/{id}/entregar")
     public org.springframework.http.ResponseEntity<?> entregarPedido(@PathVariable Long id) {
         java.util.Optional<FoodOrder> orderOpt = foodOrderRepository.findById(id);
@@ -41,7 +40,6 @@ public class FoodOrderController {
         }
     }
 
-    // Endpoint exclusivo para que el Administrador borre un pedido del historial
     @DeleteMapping("/{id}")
     public org.springframework.http.ResponseEntity<?> deleteOrder(@PathVariable Long id) {
         try {

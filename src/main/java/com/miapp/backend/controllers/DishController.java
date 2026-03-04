@@ -27,7 +27,6 @@ public class DishController {
         return dishService.getAllDishes();
     }
 
-    // Endpoint exclusivo para borrar un plato por su ID
     @DeleteMapping("/{id}")
     public org.springframework.http.ResponseEntity<?> deleteDish(@PathVariable Long id) {
         try {

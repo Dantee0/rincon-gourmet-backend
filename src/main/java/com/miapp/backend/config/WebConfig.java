@@ -9,7 +9,7 @@ import java.nio.file.Paths;
 public class WebConfig implements WebMvcConfigurer {
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        // Obtenemos la ruta absoluta de tu disco duro (ej: C:/Users/dante/.../uploads/)
+
         String rutaAbsoluta = Paths.get("uploads").toAbsolutePath().toUri().toString();
         
         registry.addResourceHandler("/uploads/**")

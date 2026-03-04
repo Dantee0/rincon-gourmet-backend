@@ -8,7 +8,6 @@ import java.util.Optional;
 @Repository
 public interface CustomerRepository extends JpaRepository<Customer, Long> {
     
-    // Esta función mágica busca a un cliente por su email en la base de datos
     Optional<Customer> findByEmail(String email);
     
 }

@@ -22,19 +22,15 @@ public class AuthController {
 
     @PostMapping("/login")
     public ResponseEntity<String> login(@RequestBody LoginRequest loginRequest) {
-        // 1. Buscamos al usuario por su email en la base de datos
         Optional<Customer> customerOpt = customerRepository.findByEmail(loginRequest.getEmail());
 
         if (customerOpt.isPresent()) {
             Customer customer = customerOpt.get();
-            // 2. Comparamos la contraseña (Ojo: en producción esto va encriptado)
-            if (customer.getPassword().equals(loginRequest.getPassword())) {
-                // 3. Si coincide, le fabricamos el Token y se lo damos
+            if (customer.getPassword().equals(loginRequest.getPassword())) 
                 String token = jwtUtil.generateToken(customer.getEmail());
                 return ResponseEntity.ok(token);
             }
         }
-        // Si algo falla, le decimos que no puede entrar
         return ResponseEntity.status(401).body("Credenciales incorrectas");
     }
 }

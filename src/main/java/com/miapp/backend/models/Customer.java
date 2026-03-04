@@ -15,7 +15,6 @@ public class Customer {
     private String email;
     private String phone;
     
-    // ¡Nueva columna para la contraseña!
     private String password;
 
     private String profileImage;
@@ -31,7 +30,6 @@ public class Customer {
         this.password = password;
     }
 
-    // Getters y Setters
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
 
